@@ -1,0 +1,1671 @@
+{
+    "version": 3,
+    "terraform_version": "0.11.1",
+    "serial": 1,
+    "lineage": "321e4142-875c-4299-97b4-a21a41a5d928",
+    "modules": [
+        {
+            "path": [
+                "root"
+            ],
+            "outputs": {
+                "asg_name": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "cna-lt-0c2953e5422f00d29-1"
+                },
+                "elb_dns_name": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "internal-cna-624a2139-2068244047.us-east-1.elb.amazonaws.com"
+                },
+                "health_check_url": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "https://624a2139.clb.test.appdev.dtcc.org/cna/health"
+                },
+                "url": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "https://624a2139.clb.test.appdev.dtcc.org/cna/"
+                }
+            },
+            "resources": {
+                "aws_elb.elb": {
+                    "type": "aws_elb",
+                    "depends_on": [
+                        "aws_security_group.web_access",
+                        "module.network",
+                        "random_id.stream_random_id"
+                    ],
+                    "primary": {
+                        "id": "cna-624a2139",
+                        "attributes": {
+                            "access_logs.#": "0",
+                            "arn": "arn:aws:elasticloadbalancing:us-east-1:443299236587:loadbalancer/cna-624a2139",
+                            "availability_zones.#": "3",
+                            "availability_zones.3551460226": "us-east-1e",
+                            "availability_zones.3569565595": "us-east-1a",
+                            "availability_zones.986537655": "us-east-1c",
+                            "connection_draining": "false",
+                            "connection_draining_timeout": "300",
+                            "cross_zone_load_balancing": "true",
+                            "dns_name": "internal-cna-624a2139-2068244047.us-east-1.elb.amazonaws.com",
+                            "health_check.#": "1",
+                            "health_check.0.healthy_threshold": "2",
+                            "health_check.0.interval": "30",
+                            "health_check.0.target": "HTTPS:8443/cna/health",
+                            "health_check.0.timeout": "3",
+                            "health_check.0.unhealthy_threshold": "2",
+                            "id": "cna-624a2139",
+                            "idle_timeout": "60",
+                            "instances.#": "0",
+                            "internal": "true",
+                            "listener.#": "1",
+                            "listener.3994985537.instance_port": "8443",
+                            "listener.3994985537.instance_protocol": "tcp",
+                            "listener.3994985537.lb_port": "443",
+                            "listener.3994985537.lb_protocol": "tcp",
+                            "listener.3994985537.ssl_certificate_id": "",
+                            "name": "cna-624a2139",
+                            "security_groups.#": "1",
+                            "security_groups.3241877201": "sg-03edf091c280f1dc8",
+                            "source_security_group": "443299236587/cna20190607142143343300000002",
+                            "source_security_group_id": "sg-03edf091c280f1dc8",
+                            "subnets.#": "3",
+                            "subnets.1252865008": "subnet-8351f2af",
+                            "subnets.3287941334": "subnet-79f7da45",
+                            "subnets.991491421": "subnet-730ad229",
+                            "tags.%": "0",
+                            "zone_id": "Z35SXDOTRQ7X7K"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_elb.elb2": {
+                    "type": "aws_elb",
+                    "depends_on": [
+                        "aws_security_group.web_access",
+                        "module.network",
+                        "random_id.stream_random_id"
+                    ],
+                    "primary": {
+                        "id": "cna-624a2139",
+                        "attributes": {
+                            "access_logs.#": "0",
+                            "arn": "arn:aws:elasticloadbalancing:us-east-1:443299236587:loadbalancer/cna-624a2139",
+                            "availability_zones.#": "3",
+                            "availability_zones.3551460226": "us-east-1e",
+                            "availability_zones.3569565595": "us-east-1a",
+                            "availability_zones.986537655": "us-east-1c",
+                            "connection_draining": "false",
+                            "connection_draining_timeout": "300",
+                            "cross_zone_load_balancing": "true",
+                            "dns_name": "internal-cna-624a2139-2068244047.us-east-1.elb.amazonaws.com",
+                            "health_check.#": "1",
+                            "health_check.0.healthy_threshold": "2",
+                            "health_check.0.interval": "30",
+                            "health_check.0.target": "HTTPS:8443/cna/health",
+                            "health_check.0.timeout": "3",
+                            "health_check.0.unhealthy_threshold": "2",
+                            "id": "cna-624a2139",
+                            "idle_timeout": "60",
+                            "instances.#": "0",
+                            "internal": "true",
+                            "listener.#": "1",
+                            "listener.3994985537.instance_port": "8443",
+                            "listener.3994985537.instance_protocol": "tcp",
+                            "listener.3994985537.lb_port": "443",
+                            "listener.3994985537.lb_protocol": "tcp",
+                            "listener.3994985537.ssl_certificate_id": "",
+                            "name": "cna-624a2139",
+                            "security_groups.#": "1",
+                            "security_groups.3241877201": "sg-03edf091c280f1dc8",
+                            "source_security_group": "443299236587/cna20190607142143343300000002",
+                            "source_security_group_id": "sg-03edf091c280f1dc8",
+                            "subnets.#": "3",
+                            "subnets.1252865008": "subnet-8351f2af",
+                            "subnets.3287941334": "subnet-79f7da45",
+                            "subnets.991491421": "subnet-730ad229",
+                            "tags.%": "0",
+                            "zone_id": "Z35SXDOTRQ7X7K"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_route53_record.record": {
+                    "type": "aws_route53_record",
+                    "depends_on": [
+                        "aws_elb.elb",
+                        "data.aws_route53_zone.zone",
+                        "random_id.stream_random_id"
+                    ],
+                    "primary": {
+                        "id": "Z86SL2RND4LRL_624a2139.clb.test.appdev.dtcc.org_A",
+                        "attributes": {
+                            "alias.#": "1",
+                            "alias.631872397.evaluate_target_health": "false",
+                            "alias.631872397.name": "internal-cna-624a2139-2068244047.us-east-1.elb.amazonaws.com",
+                            "alias.631872397.zone_id": "Z35SXDOTRQ7X7K",
+                            "fqdn": "624a2139.clb.test.appdev.dtcc.org",
+                            "id": "Z86SL2RND4LRL_624a2139.clb.test.appdev.dtcc.org_A",
+                            "name": "624a2139.clb.test.appdev.dtcc.org",
+                            "type": "A",
+                            "zone_id": "Z86SL2RND4LRL"
+                        },
+                        "meta": {
+                            "schema_version": "2"
+                        },
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_s3_bucket_object.gif": {
+                    "type": "aws_s3_bucket_object",
+                    "depends_on": [
+                        "data.aws_kms_key.s3_kms_key",
+                        "module.s3_bucket"
+                    ],
+                    "primary": {
+                        "id": "zero-downtime.gif",
+                        "attributes": {
+                            "acl": "private",
+                            "bucket": "cna-624a2139-us-east-1",
+                            "cache_control": "proxy-revalidate",
+                            "content_disposition": "",
+                            "content_encoding": "",
+                            "content_language": "",
+                            "content_type": "binary/octet-stream",
+                            "etag": "74bcaa5e254c9b2f1ef10d858c76fd85",
+                            "id": "zero-downtime.gif",
+                            "key": "zero-downtime.gif",
+                            "kms_key_id": "arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7",
+                            "server_side_encryption": "aws:kms",
+                            "source": "C:\\rhutto\\idea_projects\\tf-patterns\\examples\\asg-clb-deployment-example/../resources/zero-downtime.gif",
+                            "storage_class": "STANDARD",
+                            "tags.%": "0",
+                            "version_id": "EqlmqO8CSr9QgmMFFAwzJdNfRj3uIbw9",
+                            "website_redirect": ""
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_security_group.web_access": {
+                    "type": "aws_security_group",
+                    "depends_on": [
+                        "module.network"
+                    ],
+                    "primary": {
+                        "id": "sg-03edf091c280f1dc8",
+                        "attributes": {
+                            "arn": "arn:aws:ec2:us-east-1:443299236587:security-group/sg-03edf091c280f1dc8",
+                            "description": "Managed by Terraform",
+                            "egress.#": "2",
+                            "egress.1576163930.cidr_blocks.#": "0",
+                            "egress.1576163930.description": "",
+                            "egress.1576163930.from_port": "8443",
+                            "egress.1576163930.ipv6_cidr_blocks.#": "0",
+                            "egress.1576163930.prefix_list_ids.#": "0",
+                            "egress.1576163930.protocol": "tcp",
+                            "egress.1576163930.security_groups.#": "0",
+                            "egress.1576163930.self": "true",
+                            "egress.1576163930.to_port": "8443",
+                            "egress.3167104115.cidr_blocks.#": "0",
+                            "egress.3167104115.description": "",
+                            "egress.3167104115.from_port": "443",
+                            "egress.3167104115.ipv6_cidr_blocks.#": "0",
+                            "egress.3167104115.prefix_list_ids.#": "0",
+                            "egress.3167104115.protocol": "tcp",
+                            "egress.3167104115.security_groups.#": "0",
+                            "egress.3167104115.self": "true",
+                            "egress.3167104115.to_port": "443",
+                            "id": "sg-03edf091c280f1dc8",
+                            "ingress.#": "4",
+                            "ingress.1102287263.cidr_blocks.#": "2",
+                            "ingress.1102287263.cidr_blocks.0": "172.0.0.0/8",
+                            "ingress.1102287263.cidr_blocks.1": "10.168.224.0/23",
+                            "ingress.1102287263.description": "",
+                            "ingress.1102287263.from_port": "443",
+                            "ingress.1102287263.ipv6_cidr_blocks.#": "0",
+                            "ingress.1102287263.prefix_list_ids.#": "0",
+                            "ingress.1102287263.protocol": "tcp",
+                            "ingress.1102287263.security_groups.#": "0",
+                            "ingress.1102287263.self": "false",
+                            "ingress.1102287263.to_port": "443",
+                            "ingress.1576163930.cidr_blocks.#": "0",
+                            "ingress.1576163930.description": "",
+                            "ingress.1576163930.from_port": "8443",
+                            "ingress.1576163930.ipv6_cidr_blocks.#": "0",
+                            "ingress.1576163930.prefix_list_ids.#": "0",
+                            "ingress.1576163930.protocol": "tcp",
+                            "ingress.1576163930.security_groups.#": "0",
+                            "ingress.1576163930.self": "true",
+                            "ingress.1576163930.to_port": "8443",
+                            "ingress.1654687124.cidr_blocks.#": "2",
+                            "ingress.1654687124.cidr_blocks.0": "172.0.0.0/8",
+                            "ingress.1654687124.cidr_blocks.1": "10.168.224.0/23",
+                            "ingress.1654687124.description": "",
+                            "ingress.1654687124.from_port": "8443",
+                            "ingress.1654687124.ipv6_cidr_blocks.#": "0",
+                            "ingress.1654687124.prefix_list_ids.#": "0",
+                            "ingress.1654687124.protocol": "tcp",
+                            "ingress.1654687124.security_groups.#": "0",
+                            "ingress.1654687124.self": "false",
+                            "ingress.1654687124.to_port": "8443",
+                            "ingress.2142297555.cidr_blocks.#": "1",
+                            "ingress.2142297555.cidr_blocks.0": "172.0.0.0/8",
+                            "ingress.2142297555.description": "",
+                            "ingress.2142297555.from_port": "22",
+                            "ingress.2142297555.ipv6_cidr_blocks.#": "0",
+                            "ingress.2142297555.prefix_list_ids.#": "0",
+                            "ingress.2142297555.protocol": "tcp",
+                            "ingress.2142297555.security_groups.#": "0",
+                            "ingress.2142297555.self": "false",
+                            "ingress.2142297555.to_port": "22",
+                            "name": "cna20190607142143343300000002",
+                            "name_prefix": "cna",
+                            "owner_id": "443299236587",
+                            "revoke_rules_on_delete": "false",
+                            "tags.%": "0",
+                            "vpc_id": "vpc-fe964287"
+                        },
+                        "meta": {
+                            "e2bfb730-ecaa-11e6-8f88-34363bc7c4c0": {
+                                "create": 600000000000,
+                                "delete": 600000000000
+                            },
+                            "schema_version": "1"
+                        },
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_ami.ami": {
+                    "type": "aws_ami",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "ami-0c6b1d09930fac512",
+                        "attributes": {
+                            "architecture": "x86_64",
+                            "block_device_mappings.#": "1",
+                            "block_device_mappings.340275815.device_name": "/dev/xvda",
+                            "block_device_mappings.340275815.ebs.%": "6",
+                            "block_device_mappings.340275815.ebs.delete_on_termination": "true",
+                            "block_device_mappings.340275815.ebs.encrypted": "false",
+                            "block_device_mappings.340275815.ebs.iops": "0",
+                            "block_device_mappings.340275815.ebs.snapshot_id": "snap-04a92f3aceecdabef",
+                            "block_device_mappings.340275815.ebs.volume_size": "8",
+                            "block_device_mappings.340275815.ebs.volume_type": "gp2",
+                            "block_device_mappings.340275815.no_device": "",
+                            "block_device_mappings.340275815.virtual_name": "",
+                            "creation_date": "2019-05-09T00:58:11.000Z",
+                            "description": "Amazon Linux 2 AMI 2.0.20190508 x86_64 HVM gp2",
+                            "filter.#": "3",
+                            "filter.1860438602.name": "name",
+                            "filter.1860438602.values.#": "1",
+                            "filter.1860438602.values.0": "amzn2*gp2",
+                            "filter.3386043752.name": "architecture",
+                            "filter.3386043752.values.#": "1",
+                            "filter.3386043752.values.0": "x86_64",
+                            "filter.490168357.name": "virtualization-type",
+                            "filter.490168357.values.#": "1",
+                            "filter.490168357.values.0": "hvm",
+                            "hypervisor": "xen",
+                            "id": "ami-0c6b1d09930fac512",
+                            "image_id": "ami-0c6b1d09930fac512",
+                            "image_location": "amazon/amzn2-ami-hvm-2.0.20190508-x86_64-gp2",
+                            "image_owner_alias": "amazon",
+                            "image_type": "machine",
+                            "most_recent": "true",
+                            "name": "amzn2-ami-hvm-2.0.20190508-x86_64-gp2",
+                            "name_regex": "^amzn2",
+                            "owner_id": "137112412989",
+                            "owners.#": "2",
+                            "owners.0": "amazon",
+                            "owners.1": "self",
+                            "product_codes.#": "0",
+                            "public": "true",
+                            "root_device_name": "/dev/xvda",
+                            "root_device_type": "ebs",
+                            "root_snapshot_id": "snap-04a92f3aceecdabef",
+                            "sriov_net_support": "simple",
+                            "state": "available",
+                            "state_reason.%": "2",
+                            "state_reason.code": "UNSET",
+                            "state_reason.message": "UNSET",
+                            "tags.%": "0",
+                            "virtualization_type": "hvm"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_kms_key.s3_kms_key": {
+                    "type": "aws_kms_key",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "240c8d4f-0928-474a-9643-caee49d232b7",
+                        "attributes": {
+                            "arn": "arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7",
+                            "aws_account_id": "443299236587",
+                            "creation_date": "2019-05-03T13:48:39Z",
+                            "description": "",
+                            "enabled": "true",
+                            "expiration_model": "",
+                            "id": "240c8d4f-0928-474a-9643-caee49d232b7",
+                            "key_id": "alias/cna/s3",
+                            "key_manager": "CUSTOMER",
+                            "key_state": "Enabled",
+                            "key_usage": "ENCRYPT_DECRYPT",
+                            "origin": "AWS_KMS"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_route53_zone.zone": {
+                    "type": "aws_route53_zone",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "Z86SL2RND4LRL",
+                        "attributes": {
+                            "caller_reference": "2018-04-14T19:00:14.170147228-04:00",
+                            "comment": "Managed by Terraform",
+                            "id": "Z86SL2RND4LRL",
+                            "name": "test.appdev.dtcc.org.",
+                            "name_servers.#": "0",
+                            "private_zone": "true",
+                            "resource_record_set_count": "13",
+                            "zone_id": "Z86SL2RND4LRL"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.template_cloudinit_config.userdata": {
+                    "type": "template_cloudinit_config",
+                    "depends_on": [
+                        "aws_s3_bucket_object.gif",
+                        "data.template_file.html_page",
+                        "data.template_file.nginx",
+                        "module.s3_bucket",
+                        "module.self_signed_cert"
+                    ],
+                    "primary": {
+                        "id": "774856484",
+                        "attributes": {
+                            "base64_encode": "true",
+                            "gzip": "true",
+                            "id": "774856484",
+                            "part.#": "1",
+                            "part.0.content": "#cloud-config\n---\noutput: { all: \"| tee -a /var/log/cloud-init-output.log\" }\nruncmd:\n  - aws s3api get-object --bucket cna-624a2139-us-east-1 --key zero-downtime.gif /usr/share/nginx/site/html/cna/zero-downtime.gif\n  - sudo amazon-linux-extras install nginx1.12\n  - sudo systemctl enable nginx\n  - sudo systemctl start nginx\nwrite_files:\n  - encoding: b64\n    content: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ5akNDQXQ2Z0F3SUJBZ0lRWFJPbzRaeGdpUDY5VjhxM3dXYXliREFOQmdrcWhraUc5dzBCQVFzRkFEQjMKTVF3d0NnWURWUVFHRXdOVlUwRXhEakFNQmdOVkJCRVRCVE16TmpRM01SMHdHd1lEVlFRS0V4Uk5aV1JsWVNkegpJRkJvWVc1MGIyMXpJRXhNUXpFTU1Bb0dBMVVFQ3hNRFFrRkVNU293S0FZRFZRUURFeUUyTWpSaE1qRXpPUzVqCmJHSXVkR1Z6ZEM1aGNIQmtaWFl1WkhSall5NXZjbWN3SGhjTk1Ua3dOakEzTVRReU1qVTFXaGNOTVRrd05qRXkKTVRReU1qVTFXakIzTVF3d0NnWURWUVFHRXdOVlUwRXhEakFNQmdOVkJCRVRCVE16TmpRM01SMHdHd1lEVlFRSwpFeFJOWldSbFlTZHpJRkJvWVc1MGIyMXpJRXhNUXpFTU1Bb0dBMVVFQ3hNRFFrRkVNU293S0FZRFZRUURFeUUyCk1qUmhNakV6T1M1amJHSXVkR1Z6ZEM1aGNIQmtaWFl1WkhSall5NXZjbWN3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUM2MTgvckNrYWwwa2p2QnE0a3h2ZjBUaVFwUTBIc21oWDJQZUJvQ000bApzU2lsTW5rUnRsTS90VnVSMUtGOGdCTXBJdi9sbzEyV2g2QVo0eUhnd1M5Wi9JVm1ya3FDeERGY1BGcng4YlpNCnFIMjJpaGJHQUJUZWpjU3kvOWFTL3FxZ2Fhb3I1YnE3ZHNDdGtOMUU4ZVFFN0QzanFyekNoTk5EZDN4Zk9YR3YKOStjam1sRGhjVjFTVlZtc1lNUUFOSlpUWmRFbldoV1lpYldjbXRHck9HRmxuaGxKNmJUcW9uUTJ4blZrd0ZlcwowM2FmbE05eFJzQ2pKUE8rWG54VU9aYjU5c3crTFFLSjVBblhXeGZ2ZjFFT1dLam50ZHB2U1F3eFNPeng4WnRtClA5eTk2c2VaMGVLZGRpSWZpMW1tYzJIZEtyek0vUjk1Y0JUVnBKN0R1blA5QWdNQkFBR2pmakI4TUE0R0ExVWQKRHdFQi93UUVBd0lGb0RBVEJnTlZIU1VFRERBS0JnZ3JCZ0VGQlFjREFUQU1CZ05WSFJNQkFmOEVBakFBTUVjRwpBMVVkRVFSQU1ENkNQR2x1ZEdWeWJtRnNMV051WVMwMk1qUmhNakV6T1MweU1EWTRNalEwTURRM0xuVnpMV1ZoCmMzUXRNUzVsYkdJdVlXMWhlbTl1WVhkekxtTnZiVEFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBTytNdUY2dWUKTnQrbUF6eTkyTmdXejVPUnRtQmFJcTZsR2JPSnJYMUpPQnRMdE9kN09lTlZRN25pR05EcEtlVnhGVktUaHpRVApRSDVRc3dscjFqMkpwTVNvUFRYQVZVVVZkdEF5L2liVmZXMGJ3dGdiVjVYQVp2T0twTUxsSlM4MlRkUDFmU1ZTCm9qOVlGZS9URlRoSXluRU1JSlpSTDY3ZTY0R0c2U2lMcFIwN01kOU4rZStKUE9wWW9ZekhZN0FsOFRDUktFb2gKMjE3QUk3MmRqSUlkK0gwckRPaDE1STNoejRnTU1iektGZTVlV1lEWU9nd2E0VGxxNGFkZjB6WTM0UnI4bFJwRgo4eFgwVUlKSlFRUHBEaEZyaCtLVUJwVVh5ZjdNK3MyMnZ6SHp6aG9qNG80S2c0R3I2bkl0RzB3N1ZTd3R4Q3VmCmsxcURJRVJ3UGZmcGh3PT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=\n    path: /etc/pki/nginx/server.crt\n  - encoding: b64\n    content: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBdXRmUDZ3cEdwZEpJN3dhdUpNYjM5RTRrS1VOQjdKb1Y5ajNnYUFqT0piRW9wVEo1CkViWlRQN1Zia2RTaGZJQVRLU0wvNWFOZGxvZWdHZU1oNE1FdldmeUZacTVLZ3NReFhEeGE4ZkcyVEtoOXRvb1cKeGdBVTNvM0Vzdi9Xa3Y2cW9HbXFLK1c2dTNiQXJaRGRSUEhrQk93OTQ2cTh3b1RUUTNkOFh6bHhyL2ZuSTVwUQo0WEZkVWxWWnJHREVBRFNXVTJYUkoxb1ZtSW0xbkpyUnF6aGhaWjRaU2VtMDZxSjBOc1oxWk1CWHJOTjJuNVRQCmNVYkFveVR6dmw1OFZEbVcrZmJNUGkwQ2llUUoxMXNYNzM5UkRsaW81N1hhYjBrTU1VanM4ZkdiWmovY3ZlckgKbWRIaW5YWWlINHRacG5OaDNTcTh6UDBmZVhBVTFhU2V3N3B6L1FJREFRQUJBb0lCQUZIZThRZHZ5RWN1M3JDRwpQOVp6clFETElNTkg2bUl2bm9INDJSVWREcCtyZ2tEbzNlNHA4MDZPUEdLcFJsMlVqVkRRT2tzNGkzRERXeDhjCnpLSjhaREJORzNORDJmaDAyYUF0L2pmWUQyYUZ5aGdyYUJFNHhleERPTGFxcmk1WkV4RVpXK3pDVEZHS2xxRTMKUWczTTVIcFh2a0s5ZE5yVGN2TTBMelpXcUg5UEpMalFQVTBwR0JQd0xtOVE5NUJOVTEwcHhibkR2dlRGOUxtZApxUmVyTlBXVTNMbFUrSDUyUEJIUWVnT21wMkozMURWckdVZDFtU3VyNmpudGFkdTNHZTJSS3BWS3M5WVZGQzl0CnRSWm5qTzNnbGF0MzdHNFRoOTFsZzlQdGFrOUNJUVltdS9iNzIwdTNwWXlLSGp6WXp4dGtjeGVvdkdzemxsQ2gKL2xEQnZnRUNnWUVBMmI3ZmpLNURUYWRpaThOWWJ2U0FSNjJQb3kvenFUV1pvdnpOaVRvU2w1T2o2eGd3bzh5VwpCZzV6d3MyVlM4RHZJUG92Z3cwRTl3SWNyaEl0UFRFcHpnZFZGNngwcHFYWWFjVExOZDhWbENKbjhtTTdSZjhJCjNDa2VLdDZSaGlTTjJuRTNRN0VsTjNZVnduUy9WUTYwTnZ5MDJ0NzBhR2x2c2x6TjJnVTBhMzBDZ1lFQTI2c1gKdWdRU1h0SHQrbXpkMzRXOHJBem40b2tOSEZaOElscDErZWJPK1Bydy9KNVhSRDBYYjJEZEJJek5yeERyMDJBSApVdGMvUzNuMWZYUGEvYll5ZVlvbTVaR09vTytuSjlRQUh6ZVdRU0ZGaWdyTVpoVXBjbkk0YkJLaUhIaXZlOC9QClk5OVZacmhxelNlR0dBMjR6WW9TdjRKNDVUMlhNbWxjU0Z4L2tvRUNnWUJsTm5yMUNuK1FWZkRScEhDenlvVGkKVElQS3g5eEwxL1ZkTklOWmVSdnhSeGhYaS92MzkzMzR2TGtFWU1rMzJDdVBPWnZpSDZnaUpPSXQ2NWNKclpPUQpDQXArb1pQcmJvV0V6SXZrczVoMUxmVUJUeXpiSVd2OTRrTDZqRkE2ZVQxU3YzTi96SlRQRGQyWmNPa0s0WFhWClpXdXZuUmtnZTNvRy8ycFVJRDA0aFFLQmdRQ2I2NGQ5MjZJR2Q5QUpidmpWemFHc0pjVDZRUGx6WWRmZXNvTUgKRE5OZ1d3NXU0UjFrTEZEVUY5Y0pnY0FGUVdlQ3M2aS9IbFdwQnpvKy85c3pOdjRBMHhUazRqcHc5V3FhbEpvNQpqa1V5bWFFNGFJM0k3OEJwb2JWMjBJc00xb1VJeHVxWUkxQUZCMldYbFRSVElucElPbmN3UkRYMzBZM2VsSGFTClRrV25BUUtCZ0RaM1pxMWdUU1F2Y1NqSFJvUnNvUE5rRFc4YjFQdnhXMUs5djcyenpTa3dsRitTYVZvdFBZQ1AKVFNwKzFCb2M1S05JUlozTFhNTGl5KzI1QUFXVVhZdElBaU1RcWIvYnJ2S09YekhONEFjNk13dmNwc2VOeHJmdQpmYmRjRW1oek1ONjJRVnp4UEl4Zm1jd2RWdXZYMHdKRkgrZ21GVjlkUk5VenJGTFg0QXZGCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==\n    path: /etc/pki/nginx/private/server.key\n  - encoding: b64\n    content: IyBGb3IgbW9yZSBpbmZvcm1hdGlvbiBvbiBjb25maWd1cmF0aW9uLCBzZWU6DQojICAgKiBPZmZpY2lhbCBFbmdsaXNoIERvY3VtZW50YXRpb246IGh0dHA6Ly9uZ2lueC5vcmcvZW4vZG9jcy8NCiMgICAqIE9mZmljaWFsIFJ1c3NpYW4gRG9jdW1lbnRhdGlvbjogaHR0cDovL25naW54Lm9yZy9ydS9kb2NzLw0KDQp1c2VyIG5naW54Ow0Kd29ya2VyX3Byb2Nlc3NlcyBhdXRvOw0KZXJyb3JfbG9nIC92YXIvbG9nL25naW54L2Vycm9yLmxvZzsNCnBpZCAvcnVuL25naW54LnBpZDsNCg0KIyBMb2FkIGR5bmFtaWMgbW9kdWxlcy4gU2VlIC91c3Ivc2hhcmUvbmdpbngvUkVBRE1FLmR5bmFtaWMuDQppbmNsdWRlIC91c3Ivc2hhcmUvbmdpbngvbW9kdWxlcy8qLmNvbmY7DQoNCmV2ZW50cyB7DQogICAgd29ya2VyX2Nvbm5lY3Rpb25zIDEwMjQ7DQp9DQoNCmh0dHAgew0KICAgIGxvZ19mb3JtYXQgIG1haW4gICckcmVtb3RlX2FkZHIgLSAkcmVtb3RlX3VzZXIgWyR0aW1lX2xvY2FsXSAiJHJlcXVlc3QiICcNCiAgICAgICAgICAgICAgICAgICAgICAnJHN0YXR1cyAkYm9keV9ieXRlc19zZW50ICIkaHR0cF9yZWZlcmVyIiAnDQogICAgICAgICAgICAgICAgICAgICAgJyIkaHR0cF91c2VyX2FnZW50IiAiJGh0dHBfeF9mb3J3YXJkZWRfZm9yIic7DQoNCiAgICBhY2Nlc3NfbG9nICAvdmFyL2xvZy9uZ2lueC9hY2Nlc3MubG9nICBtYWluOw0KDQogICAgc2VuZGZpbGUgICAgICAgICAgICBvbjsNCiAgICB0Y3Bfbm9wdXNoICAgICAgICAgIG9uOw0KICAgIHRjcF9ub2RlbGF5ICAgICAgICAgb247DQogICAga2VlcGFsaXZlX3RpbWVvdXQgICA2NTsNCiAgICB0eXBlc19oYXNoX21heF9zaXplIDIwNDg7DQoNCiAgICBpbmNsdWRlICAgICAgICAgICAgIC9ldGMvbmdpbngvbWltZS50eXBlczsNCiAgICBkZWZhdWx0X3R5cGUgICAgICAgIGFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbTsNCg0KICAgICMgTG9hZCBtb2R1bGFyIGNvbmZpZ3VyYXRpb24gZmlsZXMgZnJvbSB0aGUgL2V0Yy9uZ2lueC9jb25mLmQgZGlyZWN0b3J5Lg0KICAgICMgU2VlIGh0dHA6Ly9uZ2lueC5vcmcvZW4vZG9jcy9uZ3hfY29yZV9tb2R1bGUuaHRtbCNpbmNsdWRlDQogICAgIyBmb3IgbW9yZSBpbmZvcm1hdGlvbi4NCiAgICBpbmNsdWRlIC9ldGMvbmdpbngvY29uZi5kLyouY29uZjsNCg0KICAgIHNlcnZlciB7DQogICAgICAgIGxpc3RlbiAgICAgICA4NDQzIHNzbCBodHRwMiBkZWZhdWx0X3NlcnZlcjsNCiAgICAgICAgbGlzdGVuICAgICAgIFs6Ol06ODQ0MyBzc2wgaHR0cDIgZGVmYXVsdF9zZXJ2ZXI7DQogICAgICAgIHNlcnZlcl9uYW1lICBfOw0KICAgICAgICByb290ICAgICAgICAgL3Vzci9zaGFyZS9uZ2lueC9zaXRlL2h0bWwvOw0KDQogICAgICAgIHNzbF9jZXJ0aWZpY2F0ZSAiL2V0Yy9wa2kvbmdpbngvc2VydmVyLmNydCI7DQogICAgICAgIHNzbF9jZXJ0aWZpY2F0ZV9rZXkgIi9ldGMvcGtpL25naW54L3ByaXZhdGUvc2VydmVyLmtleSI7DQogICAgICAgIHNzbF9zZXNzaW9uX2NhY2hlIHNoYXJlZDpTU0w6MW07DQogICAgICAgIHNzbF9zZXNzaW9uX3RpbWVvdXQgIDEwbTsNCiAgICAgICAgc3NsX2NpcGhlcnMgSElHSDohYU5VTEw6IU1ENTsNCiAgICAgICAgc3NsX3ByZWZlcl9zZXJ2ZXJfY2lwaGVycyBvbjsNCg0KICAgICAgICAjIExvYWQgY29uZmlndXJhdGlvbiBmaWxlcyBmb3IgdGhlIGRlZmF1bHQgc2VydmVyIGJsb2NrLg0KICAgICAgICBpbmNsdWRlIC9ldGMvbmdpbngvZGVmYXVsdC5kLyouY29uZjsNCg0KICAgICAgICBsb2NhdGlvbiAvIHsNCiAgICAgICAgfQ0KDQogICAgICAgIGxvY2F0aW9uIC9jbmEvaGVhbHRoIHsNCiAgICAgICAgICAgIGRlZmF1bHRfdHlwZSBhcHBsaWNhdGlvbi9qc29uOw0KICAgICAgICB9DQoNCiAgICAgICAgZXJyb3JfcGFnZSA0MDQgLzQwNC5odG1sOw0KICAgICAgICAgICAgbG9jYXRpb24gPSAvNDB4Lmh0bWwgew0KICAgICAgICB9DQoNCiAgICAgICAgZXJyb3JfcGFnZSA1MDAgNTAyIDUwMyA1MDQgLzUweC5odG1sOw0KICAgICAgICAgICAgbG9jYXRpb24gPSAvNTB4Lmh0bWwgew0KICAgICAgICB9DQogICAgfQ0KDQojIFNldHRpbmdzIGZvciBhIFRMUyBlbmFibGVkIHNlcnZlci4NCiMNCiMgICAgc2VydmVyIHsNCiMgICAgICAgIGxpc3RlbiAgICAgICA0NDMgc3NsIGh0dHAyIGRlZmF1bHRfc2VydmVyOw0KIyAgICAgICAgbGlzdGVuICAgICAgIFs6Ol06NDQzIHNzbCBodHRwMiBkZWZhdWx0X3NlcnZlcjsNCiMgICAgICAgIHNlcnZlcl9uYW1lICBfOw0KIyAgICAgICAgcm9vdCAgICAgICAgIC91c3Ivc2hhcmUvbmdpbngvaHRtbDsNCiMNCiMgICAgICAgIHNzbF9jZXJ0aWZpY2F0ZSAiL2V0Yy9wa2kvbmdpbngvc2VydmVyLmNydCI7DQojICAgICAgICBzc2xfY2VydGlmaWNhdGVfa2V5ICIvZXRjL3BraS9uZ2lueC9wcml2YXRlL3NlcnZlci5rZXkiOw0KIyAgICAgICAgc3NsX3Nlc3Npb25fY2FjaGUgc2hhcmVkOlNTTDoxbTsNCiMgICAgICAgIHNzbF9zZXNzaW9uX3RpbWVvdXQgIDEwbTsNCiMgICAgICAgIHNzbF9jaXBoZXJzIEhJR0g6IWFOVUxMOiFNRDU7DQojICAgICAgICBzc2xfcHJlZmVyX3NlcnZlcl9jaXBoZXJzIG9uOw0KIw0KIyAgICAgICAgIyBMb2FkIGNvbmZpZ3VyYXRpb24gZmlsZXMgZm9yIHRoZSBkZWZhdWx0IHNlcnZlciBibG9jay4NCiMgICAgICAgIGluY2x1ZGUgL2V0Yy9uZ2lueC9kZWZhdWx0LmQvKi5jb25mOw0KIw0KIyAgICAgICAgbG9jYXRpb24gLyB7DQojICAgICAgICB9DQojDQojICAgICAgICBlcnJvcl9wYWdlIDQwNCAvNDA0Lmh0bWw7DQojICAgICAgICAgICAgbG9jYXRpb24gPSAvNDB4Lmh0bWwgew0KIyAgICAgICAgfQ0KIw0KIyAgICAgICAgZXJyb3JfcGFnZSA1MDAgNTAyIDUwMyA1MDQgLzUweC5odG1sOw0KIyAgICAgICAgICAgIGxvY2F0aW9uID0gLzUweC5odG1sIHsNCiMgICAgICAgIH0NCiMgICAgfQ0KDQp9DQoNCg==\n    path: /etc/nginx/nginx.conf\n  - encoding: b64\n    content: PCFET0NUWVBFIGh0bWw+DQo8aHRtbCBsYW5nPSJlbiI+DQo8aGVhZD4NCiAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+DQogICAgPHRpdGxlPlpERDwvdGl0bGU+DQo8L2hlYWQ+DQo8IS0tIGJsdWUgLS0+DQo8Ym9keSBiZ2NvbG9yPSIjNjZhM2ZmIj4NCjxoMT5Db25ncmF0dWxhdGlvbnMsIHlvdSBoYXZlIHN1Y2Nlc3NmdWxseSBsYXVuY2hlZCB0aGUgQ0xCIFplciZPc2xhc2g7IERvd24gVGltZSBDbHVzdGVyIHdpdGggQU1JIGFtaS0wYzZiMWQwOTkzMGZhYzUxMjwvaDE+DQogICAgPGltZyBzcmM9Inplcm8tZG93bnRpbWUuZ2lmIj4NCjwvYm9keT4NCjwvaHRtbD4NCg==\n    path: /usr/share/nginx/site/html/cna/index.html\n  - content: |\n      {\n        \"status\" : \"UP\"\n      }\n    path: /usr/share/nginx/site/html/cna/health\n",
+                            "part.0.content_type": "",
+                            "part.0.filename": "",
+                            "part.0.merge_type": "",
+                            "rendered": "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"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.template"
+                },
+                "data.template_file.html_page": {
+                    "type": "template_file",
+                    "depends_on": [
+                        "data.aws_ami.ami"
+                    ],
+                    "primary": {
+                        "id": "2180eda31e84b507a1b8892ad1673699706474d21d3fbe7431f1aee3b8275dd5",
+                        "attributes": {
+                            "id": "2180eda31e84b507a1b8892ad1673699706474d21d3fbe7431f1aee3b8275dd5",
+                            "rendered": "\u003c!DOCTYPE html\u003e\r\n\u003chtml lang=\"en\"\u003e\r\n\u003chead\u003e\r\n    \u003cmeta charset=\"UTF-8\"\u003e\r\n    \u003ctitle\u003eZDD\u003c/title\u003e\r\n\u003c/head\u003e\r\n\u003c!-- blue --\u003e\r\n\u003cbody bgcolor=\"#66a3ff\"\u003e\r\n\u003ch1\u003eCongratulations, you have successfully launched the CLB Zer\u0026Oslash; Down Time Cluster with AMI ami-0c6b1d09930fac512\u003c/h1\u003e\r\n    \u003cimg src=\"zero-downtime.gif\"\u003e\r\n\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+                            "template": "\u003c!DOCTYPE html\u003e\r\n\u003chtml lang=\"en\"\u003e\r\n\u003chead\u003e\r\n    \u003cmeta charset=\"UTF-8\"\u003e\r\n    \u003ctitle\u003eZDD\u003c/title\u003e\r\n\u003c/head\u003e\r\n\u003c!-- ${instance_text} --\u003e\r\n\u003cbody bgcolor=\"${background_color}\"\u003e\r\n\u003ch1\u003eCongratulations, you have successfully launched the ${load_balancer_type} Zer\u0026Oslash; Down Time Cluster with AMI ${ami_id}\u003c/h1\u003e\r\n    \u003cimg src=\"zero-downtime.gif\"\u003e\r\n\u003c/body\u003e\r\n\u003c/html\u003e\r\n",
+                            "vars.%": "4",
+                            "vars.ami_id": "ami-0c6b1d09930fac512",
+                            "vars.background_color": "#66a3ff",
+                            "vars.instance_text": "blue",
+                            "vars.load_balancer_type": "CLB"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.template"
+                },
+                "data.template_file.nginx": {
+                    "type": "template_file",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "a4f88cb63b57103af4611c41583122253979c6764ad3bede44486f7883b83bac",
+                        "attributes": {
+                            "id": "a4f88cb63b57103af4611c41583122253979c6764ad3bede44486f7883b83bac",
+                            "rendered": "# For more information on configuration, see:\r\n#   * Official English Documentation: http://nginx.org/en/docs/\r\n#   * Official Russian Documentation: http://nginx.org/ru/docs/\r\n\r\nuser nginx;\r\nworker_processes auto;\r\nerror_log /var/log/nginx/error.log;\r\npid /run/nginx.pid;\r\n\r\n# Load dynamic modules. See /usr/share/nginx/README.dynamic.\r\ninclude /usr/share/nginx/modules/*.conf;\r\n\r\nevents {\r\n    worker_connections 1024;\r\n}\r\n\r\nhttp {\r\n    log_format  main  '$remote_addr - $remote_user [$time_local] \"$request\" '\r\n                      '$status $body_bytes_sent \"$http_referer\" '\r\n                      '\"$http_user_agent\" \"$http_x_forwarded_for\"';\r\n\r\n    access_log  /var/log/nginx/access.log  main;\r\n\r\n    sendfile            on;\r\n    tcp_nopush          on;\r\n    tcp_nodelay         on;\r\n    keepalive_timeout   65;\r\n    types_hash_max_size 2048;\r\n\r\n    include             /etc/nginx/mime.types;\r\n    default_type        application/octet-stream;\r\n\r\n    # Load modular configuration files from the /etc/nginx/conf.d directory.\r\n    # See http://nginx.org/en/docs/ngx_core_module.html#include\r\n    # for more information.\r\n    include /etc/nginx/conf.d/*.conf;\r\n\r\n    server {\r\n        listen       8443 ssl http2 default_server;\r\n        listen       [::]:8443 ssl http2 default_server;\r\n        server_name  _;\r\n        root         /usr/share/nginx/site/html/;\r\n\r\n        ssl_certificate \"/etc/pki/nginx/server.crt\";\r\n        ssl_certificate_key \"/etc/pki/nginx/private/server.key\";\r\n        ssl_session_cache shared:SSL:1m;\r\n        ssl_session_timeout  10m;\r\n        ssl_ciphers HIGH:!aNULL:!MD5;\r\n        ssl_prefer_server_ciphers on;\r\n\r\n        # Load configuration files for the default server block.\r\n        include /etc/nginx/default.d/*.conf;\r\n\r\n        location / {\r\n        }\r\n\r\n        location /cna/health {\r\n            default_type application/json;\r\n        }\r\n\r\n        error_page 404 /404.html;\r\n            location = /40x.html {\r\n        }\r\n\r\n        error_page 500 502 503 504 /50x.html;\r\n            location = /50x.html {\r\n        }\r\n    }\r\n\r\n# Settings for a TLS enabled server.\r\n#\r\n#    server {\r\n#        listen       443 ssl http2 default_server;\r\n#        listen       [::]:443 ssl http2 default_server;\r\n#        server_name  _;\r\n#        root         /usr/share/nginx/html;\r\n#\r\n#        ssl_certificate \"/etc/pki/nginx/server.crt\";\r\n#        ssl_certificate_key \"/etc/pki/nginx/private/server.key\";\r\n#        ssl_session_cache shared:SSL:1m;\r\n#        ssl_session_timeout  10m;\r\n#        ssl_ciphers HIGH:!aNULL:!MD5;\r\n#        ssl_prefer_server_ciphers on;\r\n#\r\n#        # Load configuration files for the default server block.\r\n#        include /etc/nginx/default.d/*.conf;\r\n#\r\n#        location / {\r\n#        }\r\n#\r\n#        error_page 404 /404.html;\r\n#            location = /40x.html {\r\n#        }\r\n#\r\n#        error_page 500 502 503 504 /50x.html;\r\n#            location = /50x.html {\r\n#        }\r\n#    }\r\n\r\n}\r\n\r\n",
+                            "template": "# For more information on configuration, see:\r\n#   * Official English Documentation: http://nginx.org/en/docs/\r\n#   * Official Russian Documentation: http://nginx.org/ru/docs/\r\n\r\nuser nginx;\r\nworker_processes auto;\r\nerror_log /var/log/nginx/error.log;\r\npid /run/nginx.pid;\r\n\r\n# Load dynamic modules. See /usr/share/nginx/README.dynamic.\r\ninclude /usr/share/nginx/modules/*.conf;\r\n\r\nevents {\r\n    worker_connections 1024;\r\n}\r\n\r\nhttp {\r\n    log_format  main  '$remote_addr - $remote_user [$time_local] \"$request\" '\r\n                      '$status $body_bytes_sent \"$http_referer\" '\r\n                      '\"$http_user_agent\" \"$http_x_forwarded_for\"';\r\n\r\n    access_log  /var/log/nginx/access.log  main;\r\n\r\n    sendfile            on;\r\n    tcp_nopush          on;\r\n    tcp_nodelay         on;\r\n    keepalive_timeout   65;\r\n    types_hash_max_size 2048;\r\n\r\n    include             /etc/nginx/mime.types;\r\n    default_type        application/octet-stream;\r\n\r\n    # Load modular configuration files from the /etc/nginx/conf.d directory.\r\n    # See http://nginx.org/en/docs/ngx_core_module.html#include\r\n    # for more information.\r\n    include /etc/nginx/conf.d/*.conf;\r\n\r\n    server {\r\n        listen       8443 ssl http2 default_server;\r\n        listen       [::]:8443 ssl http2 default_server;\r\n        server_name  _;\r\n        root         /usr/share/nginx/site/html/;\r\n\r\n        ssl_certificate \"/etc/pki/nginx/server.crt\";\r\n        ssl_certificate_key \"/etc/pki/nginx/private/server.key\";\r\n        ssl_session_cache shared:SSL:1m;\r\n        ssl_session_timeout  10m;\r\n        ssl_ciphers HIGH:!aNULL:!MD5;\r\n        ssl_prefer_server_ciphers on;\r\n\r\n        # Load configuration files for the default server block.\r\n        include /etc/nginx/default.d/*.conf;\r\n\r\n        location / {\r\n        }\r\n\r\n        location /${app_name}/health {\r\n            default_type application/json;\r\n        }\r\n\r\n        error_page 404 /404.html;\r\n            location = /40x.html {\r\n        }\r\n\r\n        error_page 500 502 503 504 /50x.html;\r\n            location = /50x.html {\r\n        }\r\n    }\r\n\r\n# Settings for a TLS enabled server.\r\n#\r\n#    server {\r\n#        listen       443 ssl http2 default_server;\r\n#        listen       [::]:443 ssl http2 default_server;\r\n#        server_name  _;\r\n#        root         /usr/share/nginx/html;\r\n#\r\n#        ssl_certificate \"/etc/pki/nginx/server.crt\";\r\n#        ssl_certificate_key \"/etc/pki/nginx/private/server.key\";\r\n#        ssl_session_cache shared:SSL:1m;\r\n#        ssl_session_timeout  10m;\r\n#        ssl_ciphers HIGH:!aNULL:!MD5;\r\n#        ssl_prefer_server_ciphers on;\r\n#\r\n#        # Load configuration files for the default server block.\r\n#        include /etc/nginx/default.d/*.conf;\r\n#\r\n#        location / {\r\n#        }\r\n#\r\n#        error_page 404 /404.html;\r\n#            location = /40x.html {\r\n#        }\r\n#\r\n#        error_page 500 502 503 504 /50x.html;\r\n#            location = /50x.html {\r\n#        }\r\n#    }\r\n\r\n}\r\n\r\n",
+                            "vars.%": "1",
+                            "vars.app_name": "cna"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.template"
+                },
+                "random_id.stream_random_id": {
+                    "type": "random_id",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "YkohOQ",
+                        "attributes": {
+                            "b64": "YkohOQ",
+                            "b64_std": "YkohOQ==",
+                            "b64_url": "YkohOQ",
+                            "byte_length": "4",
+                            "dec": "1649025337",
+                            "hex": "624a2139",
+                            "id": "YkohOQ"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.random"
+                }
+            },
+            "depends_on": []
+        },
+        {
+            "path": [
+                "root",
+                "asg"
+            ],
+            "outputs": {
+                "asg_name": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "cna-lt-0c2953e5422f00d29-1"
+                },
+                "launch_template_id": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "lt-0c2953e5422f00d29"
+                },
+                "launch_template_latest_version": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "1"
+                }
+            },
+            "resources": {
+                "aws_autoscaling_group.asg": {
+                    "type": "aws_autoscaling_group",
+                    "depends_on": [
+                        "aws_launch_template.launch_template",
+                        "data.null_data_source.asg-tags.*",
+                        "local.new_asg_desired_capacity",
+                        "local.new_asg_name"
+                    ],
+                    "primary": {
+                        "id": "cna-lt-0c2953e5422f00d29-1",
+                        "attributes": {
+                            "arn": "arn:aws:autoscaling:us-east-1:443299236587:autoScalingGroup:5fc2f86a-0171-4bdd-a339-b555ca129070:autoScalingGroupName/cna-lt-0c2953e5422f00d29-1",
+                            "availability_zones.#": "3",
+                            "availability_zones.3551460226": "us-east-1e",
+                            "availability_zones.3569565595": "us-east-1a",
+                            "availability_zones.986537655": "us-east-1c",
+                            "default_cooldown": "300",
+                            "desired_capacity": "1",
+                            "enabled_metrics.#": "0",
+                            "force_delete": "false",
+                            "health_check_grace_period": "300",
+                            "health_check_type": "EC2",
+                            "id": "cna-lt-0c2953e5422f00d29-1",
+                            "launch_configuration": "",
+                            "launch_template.#": "1",
+                            "launch_template.0.id": "lt-0c2953e5422f00d29",
+                            "launch_template.0.name": "terraform-20190607142255561900000006",
+                            "launch_template.0.version": "$Latest",
+                            "load_balancers.#": "1",
+                            "load_balancers.4163004513": "cna-624a2139",
+                            "max_size": "3",
+                            "metrics_granularity": "1Minute",
+                            "min_size": "1",
+                            "mixed_instances_policy.#": "0",
+                            "name": "cna-lt-0c2953e5422f00d29-1",
+                            "placement_group": "",
+                            "protect_from_scale_in": "false",
+                            "service_linked_role_arn": "arn:aws:iam::443299236587:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+                            "suspended_processes.#": "0",
+                            "tags.#": "8",
+                            "tags.0.%": "3",
+                            "tags.0.key": "application_id",
+                            "tags.0.propagate_at_launch": "0",
+                            "tags.0.value": "cna",
+                            "tags.1.%": "3",
+                            "tags.1.key": "best_by",
+                            "tags.1.propagate_at_launch": "0",
+                            "tags.1.value": "1 month after creation date",
+                            "tags.2.%": "3",
+                            "tags.2.key": "created_by",
+                            "tags.2.propagate_at_launch": "0",
+                            "tags.2.value": "no-reply@dtcc.com",
+                            "tags.3.%": "3",
+                            "tags.3.key": "data_class",
+                            "tags.3.propagate_at_launch": "0",
+                            "tags.3.value": "green",
+                            "tags.4.%": "3",
+                            "tags.4.key": "description",
+                            "tags.4.propagate_at_launch": "0",
+                            "tags.4.value": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tags.5.%": "3",
+                            "tags.5.key": "environment",
+                            "tags.5.propagate_at_launch": "0",
+                            "tags.5.value": "dev",
+                            "tags.6.%": "3",
+                            "tags.6.key": "stack_name",
+                            "tags.6.propagate_at_launch": "0",
+                            "tags.6.value": "test stack of Medeas Baneful Phantoms",
+                            "tags.7.%": "3",
+                            "tags.7.key": "termination_date",
+                            "tags.7.propagate_at_launch": "0",
+                            "tags.7.value": "n/a",
+                            "target_group_arns.#": "0",
+                            "termination_policies.#": "0",
+                            "vpc_zone_identifier.#": "3",
+                            "vpc_zone_identifier.1252865008": "subnet-8351f2af",
+                            "vpc_zone_identifier.3287941334": "subnet-79f7da45",
+                            "vpc_zone_identifier.991491421": "subnet-730ad229",
+                            "wait_for_capacity_timeout": "10m",
+                            "wait_for_elb_capacity": "1"
+                        },
+                        "meta": {
+                            "e2bfb730-ecaa-11e6-8f88-34363bc7c4c0": {
+                                "delete": 600000000000
+                            }
+                        },
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_launch_template.launch_template": {
+                    "type": "aws_launch_template",
+                    "depends_on": [
+                        "local.root_volume_size"
+                    ],
+                    "primary": {
+                        "id": "lt-0c2953e5422f00d29",
+                        "attributes": {
+                            "arn": "arn:aws:ec2:us-east-1:443299236587:launch-template/lt-0c2953e5422f00d29",
+                            "block_device_mappings.#": "1",
+                            "block_device_mappings.0.device_name": "/dev/xvda",
+                            "block_device_mappings.0.ebs.#": "1",
+                            "block_device_mappings.0.ebs.0.delete_on_termination": "",
+                            "block_device_mappings.0.ebs.0.encrypted": "",
+                            "block_device_mappings.0.ebs.0.iops": "0",
+                            "block_device_mappings.0.ebs.0.kms_key_id": "",
+                            "block_device_mappings.0.ebs.0.snapshot_id": "",
+                            "block_device_mappings.0.ebs.0.volume_size": "8",
+                            "block_device_mappings.0.ebs.0.volume_type": "gp2",
+                            "block_device_mappings.0.no_device": "",
+                            "block_device_mappings.0.virtual_name": "",
+                            "capacity_reservation_specification.#": "0",
+                            "credit_specification.#": "0",
+                            "default_version": "1",
+                            "description": "",
+                            "disable_api_termination": "false",
+                            "ebs_optimized": "",
+                            "elastic_gpu_specifications.#": "0",
+                            "elastic_inference_accelerator.#": "0",
+                            "iam_instance_profile.#": "1",
+                            "iam_instance_profile.0.arn": "",
+                            "iam_instance_profile.0.name": "cna-test-instance-profile-20190607142144174300000003",
+                            "id": "lt-0c2953e5422f00d29",
+                            "image_id": "ami-0c6b1d09930fac512",
+                            "instance_initiated_shutdown_behavior": "",
+                            "instance_market_options.#": "0",
+                            "instance_type": "t2.micro",
+                            "kernel_id": "",
+                            "key_name": "rhutto",
+                            "latest_version": "1",
+                            "license_specification.#": "0",
+                            "monitoring.#": "0",
+                            "name": "terraform-20190607142255561900000006",
+                            "network_interfaces.#": "0",
+                            "placement.#": "0",
+                            "ram_disk_id": "",
+                            "security_group_names.#": "0",
+                            "tag_specifications.#": "2",
+                            "tag_specifications.0.resource_type": "instance",
+                            "tag_specifications.0.tags.%": "8",
+                            "tag_specifications.0.tags.application_id": "cna",
+                            "tag_specifications.0.tags.best_by": "1 month after creation date",
+                            "tag_specifications.0.tags.created_by": "no-reply@dtcc.com",
+                            "tag_specifications.0.tags.data_class": "green",
+                            "tag_specifications.0.tags.description": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tag_specifications.0.tags.environment": "dev",
+                            "tag_specifications.0.tags.stack_name": "test stack of Medeas Baneful Phantoms",
+                            "tag_specifications.0.tags.termination_date": "n/a",
+                            "tag_specifications.1.resource_type": "volume",
+                            "tag_specifications.1.tags.%": "8",
+                            "tag_specifications.1.tags.application_id": "cna",
+                            "tag_specifications.1.tags.best_by": "1 month after creation date",
+                            "tag_specifications.1.tags.created_by": "no-reply@dtcc.com",
+                            "tag_specifications.1.tags.data_class": "green",
+                            "tag_specifications.1.tags.description": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tag_specifications.1.tags.environment": "dev",
+                            "tag_specifications.1.tags.stack_name": "test stack of Medeas Baneful Phantoms",
+                            "tag_specifications.1.tags.termination_date": "n/a",
+                            "tags.%": "8",
+                            "tags.application_id": "cna",
+                            "tags.best_by": "1 month after creation date",
+                            "tags.created_by": "no-reply@dtcc.com",
+                            "tags.data_class": "green",
+                            "tags.description": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tags.environment": "dev",
+                            "tags.stack_name": "test stack of Medeas Baneful Phantoms",
+                            "tags.termination_date": "n/a",
+                            "user_data": "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",
+                            "vpc_security_group_ids.#": "3",
+                            "vpc_security_group_ids.1286910259": "sg-d72a2ca0",
+                            "vpc_security_group_ids.2451365877": "sg-03edf091c280f1dc8",
+                            "vpc_security_group_ids.3747777463": "sg-7751d300"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.null_data_source.asg-tags.0": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "application_id",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "cna",
+                            "outputs.%": "3",
+                            "outputs.key": "application_id",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "cna",
+                            "random": "4454688268906584792"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.1": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "best_by",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "1 month after creation date",
+                            "outputs.%": "3",
+                            "outputs.key": "best_by",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "1 month after creation date",
+                            "random": "9151302844698188297"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.2": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "created_by",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "no-reply@dtcc.com",
+                            "outputs.%": "3",
+                            "outputs.key": "created_by",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "no-reply@dtcc.com",
+                            "random": "6508928801810620286"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.3": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "data_class",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "green",
+                            "outputs.%": "3",
+                            "outputs.key": "data_class",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "green",
+                            "random": "5047073329634695804"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.4": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "description",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "outputs.%": "3",
+                            "outputs.key": "description",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "random": "8899539046202248247"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.5": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "environment",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "dev",
+                            "outputs.%": "3",
+                            "outputs.key": "environment",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "dev",
+                            "random": "1050473028386790229"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.6": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "stack_name",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "test stack of Medeas Baneful Phantoms",
+                            "outputs.%": "3",
+                            "outputs.key": "stack_name",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "test stack of Medeas Baneful Phantoms",
+                            "random": "6118364282861157470"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                },
+                "data.null_data_source.asg-tags.7": {
+                    "type": "null_data_source",
+                    "depends_on": [
+                        "local.default_tag_keys",
+                        "local.default_tag_values"
+                    ],
+                    "primary": {
+                        "id": "static",
+                        "attributes": {
+                            "has_computed_default": "default",
+                            "id": "static",
+                            "inputs.%": "3",
+                            "inputs.key": "termination_date",
+                            "inputs.propagate_at_launch": "false",
+                            "inputs.value": "n/a",
+                            "outputs.%": "3",
+                            "outputs.key": "termination_date",
+                            "outputs.propagate_at_launch": "false",
+                            "outputs.value": "n/a",
+                            "random": "1202766143620537737"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.null"
+                }
+            },
+            "depends_on": []
+        },
+        {
+            "path": [
+                "root",
+                "ec2_role"
+            ],
+            "outputs": {
+                "instance_profile_arn": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "arn:aws:iam::443299236587:instance-profile/cna-test-instance-profile-20190607142144174300000003"
+                },
+                "instance_profile_name": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "cna-test-instance-profile-20190607142144174300000003"
+                },
+                "role_arn": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "arn:aws:iam::443299236587:role/cna-test-role-20190607142143341300000001"
+                },
+                "role_name": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "cna-test-role-20190607142143341300000001"
+                }
+            },
+            "resources": {
+                "aws_iam_instance_profile.ec2_profile": {
+                    "type": "aws_iam_instance_profile",
+                    "depends_on": [
+                        "aws_iam_role.ec2_role"
+                    ],
+                    "primary": {
+                        "id": "cna-test-instance-profile-20190607142144174300000003",
+                        "attributes": {
+                            "arn": "arn:aws:iam::443299236587:instance-profile/cna-test-instance-profile-20190607142144174300000003",
+                            "create_date": "2019-06-07T14:21:44Z",
+                            "id": "cna-test-instance-profile-20190607142144174300000003",
+                            "name": "cna-test-instance-profile-20190607142144174300000003",
+                            "name_prefix": "cna-test-instance-profile-",
+                            "path": "/",
+                            "role": "cna-test-role-20190607142143341300000001",
+                            "roles.#": "0",
+                            "unique_id": "AIPAWONVRRLVX2EK5OP55"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_iam_role.ec2_role": {
+                    "type": "aws_iam_role",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "cna-test-role-20190607142143341300000001",
+                        "attributes": {
+                            "arn": "arn:aws:iam::443299236587:role/cna-test-role-20190607142143341300000001",
+                            "assume_role_policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"phantom1\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+                            "create_date": "2019-06-07T14:21:43Z",
+                            "description": "1 role to rule them all",
+                            "force_detach_policies": "true",
+                            "id": "cna-test-role-20190607142143341300000001",
+                            "max_session_duration": "3600",
+                            "name": "cna-test-role-20190607142143341300000001",
+                            "name_prefix": "cna-test-role-",
+                            "path": "/",
+                            "tags.%": "8",
+                            "tags.application_id": "cna",
+                            "tags.best_by": "1 month after creation date",
+                            "tags.created_by": "no-reply@dtcc.com",
+                            "tags.data_class": "green",
+                            "tags.description": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tags.environment": "dev",
+                            "tags.stack_name": "test stack of Medeas Baneful Phantoms",
+                            "tags.termination_date": "n/a",
+                            "unique_id": "AROAWONVRRLV4BEI236VU"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_iam_role_policy.kms": {
+                    "type": "aws_iam_role_policy",
+                    "depends_on": [
+                        "aws_iam_role.ec2_role"
+                    ],
+                    "primary": {
+                        "id": "cna-test-role-20190607142143341300000001:terraform-20190607142144174300000004",
+                        "attributes": {
+                            "id": "cna-test-role-20190607142143341300000001:terraform-20190607142144174300000004",
+                            "name": "terraform-20190607142144174300000004",
+                            "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": {\n    \"Effect\": \"Allow\",\n    \"Action\": [\n      \"kms:Encrypt\",\n      \"kms:Decrypt\"\n    ],\n    \"Resource\": [\n      \"arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7\"\n    ]\n  }\n}\n",
+                            "role": "cna-test-role-20190607142143341300000001"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "aws_iam_role_policy_attachment.test-attach": {
+                    "type": "aws_iam_role_policy_attachment",
+                    "depends_on": [
+                        "aws_iam_role.ec2_role"
+                    ],
+                    "primary": {
+                        "id": "cna-test-role-20190607142143341300000001-20190607142144597500000005",
+                        "attributes": {
+                            "id": "cna-test-role-20190607142143341300000001-20190607142144597500000005",
+                            "policy_arn": "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess",
+                            "role": "cna-test-role-20190607142143341300000001"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                }
+            },
+            "depends_on": []
+        },
+        {
+            "path": [
+                "root",
+                "network"
+            ],
+            "outputs": {
+                "base_services_sg": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "sg-7751d300"
+                },
+                "dns_sg": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "sg-d72a2ca0"
+                },
+                "nat_subnets": {
+                    "sensitive": false,
+                    "type": "list",
+                    "value": [
+                        "subnet-fd0e2ba0",
+                        "subnet-ed6046c2",
+                        "subnet-8e9bc5b1"
+                    ]
+                },
+                "private_subnets": {
+                    "sensitive": false,
+                    "type": "list",
+                    "value": [
+                        "subnet-730ad229",
+                        "subnet-8351f2af",
+                        "subnet-79f7da45"
+                    ]
+                },
+                "public_subnets": {
+                    "sensitive": false,
+                    "type": "list",
+                    "value": [
+                        "subnet-9a51f2b6",
+                        "subnet-2ef6db12",
+                        "subnet-2c0cd476"
+                    ]
+                },
+                "vpc_id": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "vpc-fe964287"
+                }
+            },
+            "resources": {
+                "data.aws_caller_identity.current": {
+                    "type": "aws_caller_identity",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "2019-06-07 14:21:30.8518871 +0000 UTC",
+                        "attributes": {
+                            "account_id": "443299236587",
+                            "arn": "arn:aws:sts::443299236587:assumed-role/role-admin-Manager/RHutto",
+                            "id": "2019-06-07 14:21:30.8518871 +0000 UTC",
+                            "user_id": "AROAJLG25DXTRBYHM4VBS:RHutto"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_region.current": {
+                    "type": "aws_region",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "us-east-1",
+                        "attributes": {
+                            "description": "US East (N. Virginia)",
+                            "endpoint": "ec2.us-east-1.amazonaws.com",
+                            "id": "us-east-1",
+                            "name": "us-east-1"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_security_group.base_sg": {
+                    "type": "aws_security_group",
+                    "depends_on": [
+                        "data.aws_vpc.vpc"
+                    ],
+                    "primary": {
+                        "id": "sg-7751d300",
+                        "attributes": {
+                            "arn": "arn:aws:ec2:us-east-1:443299236587:security-group/sg-7751d300",
+                            "description": "Allows Lambda Function to resolve DNS from DHCP configured DNS servers",
+                            "filter.#": "1",
+                            "filter.1047589879.name": "group-name",
+                            "filter.1047589879.values.#": "1",
+                            "filter.1047589879.values.377760156": "base-services",
+                            "id": "sg-7751d300",
+                            "name": "base-services",
+                            "tags.%": "10",
+                            "tags.LDC": "true",
+                            "tags.Name": "nss-dev-base_services-sg",
+                            "tags.application_id": "nss",
+                            "tags.created_by": "spropson@dtcc.com",
+                            "tags.data_class": "yellow",
+                            "tags.description": "Allows standard services to/from instances",
+                            "tags.environment": "dev",
+                            "tags.name": "nss-dev-base_services-sg",
+                            "tags.stack_name": "vpc",
+                            "tags.termination_date": "none",
+                            "vpc_id": "vpc-fe964287"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_security_group.dns_sg": {
+                    "type": "aws_security_group",
+                    "depends_on": [
+                        "data.aws_vpc.vpc"
+                    ],
+                    "primary": {
+                        "id": "sg-d72a2ca0",
+                        "attributes": {
+                            "arn": "arn:aws:ec2:us-east-1:443299236587:security-group/sg-d72a2ca0",
+                            "description": "Managed by Terraform",
+                            "filter.#": "1",
+                            "filter.3039681869.name": "group-name",
+                            "filter.3039681869.values.#": "1",
+                            "filter.3039681869.values.1458902812": "sg_dns_instances-*-sg",
+                            "id": "sg-d72a2ca0",
+                            "name": "sg_dns_instances-dev-sg",
+                            "tags.%": "10",
+                            "tags.LDC": "true",
+                            "tags.Name": "nss-dev-dns_instances-sg",
+                            "tags.application_id": "nss",
+                            "tags.created_by": "spropson@dtcc.com",
+                            "tags.data_class": "yellow",
+                            "tags.description": "S3 bucket to store DNS config files.",
+                            "tags.environment": "dev",
+                            "tags.name": "nss-dev-dns_instances-sg",
+                            "tags.stack_name": "dns",
+                            "tags.termination_date": "none",
+                            "vpc_id": "vpc-fe964287"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_subnet_ids.nat_subnet_ids": {
+                    "type": "aws_subnet_ids",
+                    "depends_on": [
+                        "data.aws_vpc.vpc"
+                    ],
+                    "primary": {
+                        "id": "vpc-fe964287",
+                        "attributes": {
+                            "id": "vpc-fe964287",
+                            "ids.#": "3",
+                            "ids.3690381057": "subnet-fd0e2ba0",
+                            "ids.3778396506": "subnet-ed6046c2",
+                            "ids.3999984446": "subnet-8e9bc5b1",
+                            "tags.%": "1",
+                            "tags.Name": "*-nat-*",
+                            "vpc_id": "vpc-fe964287"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_subnet_ids.private_subnet_ids": {
+                    "type": "aws_subnet_ids",
+                    "depends_on": [
+                        "data.aws_vpc.vpc"
+                    ],
+                    "primary": {
+                        "id": "vpc-fe964287",
+                        "attributes": {
+                            "id": "vpc-fe964287",
+                            "ids.#": "3",
+                            "ids.1252865008": "subnet-8351f2af",
+                            "ids.3287941334": "subnet-79f7da45",
+                            "ids.991491421": "subnet-730ad229",
+                            "tags.%": "1",
+                            "tags.Name": "*-priv-*",
+                            "vpc_id": "vpc-fe964287"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_subnet_ids.public_subnet_ids": {
+                    "type": "aws_subnet_ids",
+                    "depends_on": [
+                        "data.aws_vpc.vpc"
+                    ],
+                    "primary": {
+                        "id": "vpc-fe964287",
+                        "attributes": {
+                            "id": "vpc-fe964287",
+                            "ids.#": "3",
+                            "ids.1913375175": "subnet-9a51f2b6",
+                            "ids.3009051518": "subnet-2ef6db12",
+                            "ids.3282621576": "subnet-2c0cd476",
+                            "tags.%": "1",
+                            "tags.Name": "*-pub-*",
+                            "vpc_id": "vpc-fe964287"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.aws_vpc.vpc": {
+                    "type": "aws_vpc",
+                    "depends_on": [
+                        "data.aws_caller_identity.current"
+                    ],
+                    "primary": {
+                        "id": "vpc-fe964287",
+                        "attributes": {
+                            "arn": "arn:aws:ec2:us-east-1:443299236587:vpc/vpc-fe964287",
+                            "cidr_block": "10.205.128.0/17",
+                            "cidr_block_associations.#": "1",
+                            "cidr_block_associations.0.association_id": "vpc-cidr-assoc-8c3bfce7",
+                            "cidr_block_associations.0.cidr_block": "10.205.128.0/17",
+                            "cidr_block_associations.0.state": "associated",
+                            "default": "false",
+                            "dhcp_options_id": "dopt-0e483459dc726243c",
+                            "enable_dns_hostnames": "true",
+                            "enable_dns_support": "true",
+                            "id": "vpc-fe964287",
+                            "instance_tenancy": "default",
+                            "main_route_table_id": "rtb-d1a823a9",
+                            "owner_id": "443299236587",
+                            "state": "available",
+                            "tags.%": "10",
+                            "tags.LDC": "true",
+                            "tags.Name": "solutions-dev",
+                            "tags.application_id": "nss",
+                            "tags.created_by": "spropson@dtcc.com",
+                            "tags.data_class": "yellow",
+                            "tags.description": "solutions-dev",
+                            "tags.environment": "dev",
+                            "tags.name": "solutions-dev",
+                            "tags.stack_name": "vpc",
+                            "tags.termination_date": "none"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                }
+            },
+            "depends_on": []
+        },
+        {
+            "path": [
+                "root",
+                "s3_bucket"
+            ],
+            "outputs": {
+                "s3_bucket_arn": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "arn:aws:s3:::cna-624a2139-us-east-1"
+                },
+                "s3_bucket_name": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "cna-624a2139-us-east-1"
+                },
+                "s3_bucket_tags": {
+                    "sensitive": false,
+                    "type": "map",
+                    "value": {
+                        "application_id": "cna",
+                        "best_by": "1 month after creation date",
+                        "created_by": "no-reply@dtcc.com",
+                        "data_class": "green",
+                        "description": "Web Cluster with ALB and Zero Down Time Deployements",
+                        "environment": "dev",
+                        "name": "cna-624a2139",
+                        "stack_name": "test stack of Medeas Baneful Phantoms",
+                        "termination_date": "n/a"
+                    }
+                }
+            },
+            "resources": {
+                "aws_s3_bucket.s3_bucket": {
+                    "type": "aws_s3_bucket",
+                    "depends_on": [
+                        "local.s3_bucket_name"
+                    ],
+                    "primary": {
+                        "id": "cna-624a2139-us-east-1",
+                        "attributes": {
+                            "acceleration_status": "",
+                            "acl": "private",
+                            "arn": "arn:aws:s3:::cna-624a2139-us-east-1",
+                            "bucket": "cna-624a2139-us-east-1",
+                            "bucket_domain_name": "cna-624a2139-us-east-1.s3.amazonaws.com",
+                            "bucket_regional_domain_name": "cna-624a2139-us-east-1.s3.amazonaws.com",
+                            "cors_rule.#": "0",
+                            "force_destroy": "true",
+                            "hosted_zone_id": "Z3AQBSTGFYJSTF",
+                            "id": "cna-624a2139-us-east-1",
+                            "lifecycle_rule.#": "0",
+                            "logging.#": "0",
+                            "object_lock_configuration.#": "0",
+                            "region": "us-east-1",
+                            "replication_configuration.#": "0",
+                            "request_payer": "BucketOwner",
+                            "server_side_encryption_configuration.#": "1",
+                            "server_side_encryption_configuration.0.rule.#": "1",
+                            "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.#": "1",
+                            "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.0.kms_master_key_id": "arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7",
+                            "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.0.sse_algorithm": "aws:kms",
+                            "tags.%": "9",
+                            "tags.application_id": "cna",
+                            "tags.best_by": "1 month after creation date",
+                            "tags.created_by": "no-reply@dtcc.com",
+                            "tags.data_class": "green",
+                            "tags.description": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tags.environment": "dev",
+                            "tags.name": "cna-624a2139-us-east-1",
+                            "tags.stack_name": "test stack of Medeas Baneful Phantoms",
+                            "tags.termination_date": "n/a",
+                            "versioning.#": "1",
+                            "versioning.0.enabled": "true",
+                            "versioning.0.mfa_delete": "false",
+                            "website.#": "0"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "module.s3_bucket.provider.aws.primary"
+                },
+                "aws_s3_bucket_metric.s3_bucket_metric": {
+                    "type": "aws_s3_bucket_metric",
+                    "depends_on": [
+                        "aws_s3_bucket.s3_bucket",
+                        "local.s3_bucket_name"
+                    ],
+                    "primary": {
+                        "id": "cna-624a2139-us-east-1:metric-cna-624a2139",
+                        "attributes": {
+                            "bucket": "cna-624a2139-us-east-1",
+                            "id": "cna-624a2139-us-east-1:metric-cna-624a2139",
+                            "name": "metric-cna-624a2139"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "module.s3_bucket.provider.aws.primary"
+                },
+                "aws_s3_bucket_policy.s3_bucket_policy": {
+                    "type": "aws_s3_bucket_policy",
+                    "depends_on": [
+                        "aws_s3_bucket.s3_bucket",
+                        "local.s3_bucket_policy"
+                    ],
+                    "primary": {
+                        "id": "cna-624a2139-us-east-1",
+                        "attributes": {
+                            "bucket": "cna-624a2139-us-east-1",
+                            "id": "cna-624a2139-us-east-1",
+                            "policy": "{\n  \"Version\"     :   \"2012-10-17\",\n  \"Id\"          :   \"Base-DTCC-Bucket-Policy\",\n  \"Statement\"   : [\n    {\n      \"Sid\"           : \"DenyIncorrectEncryptionHeader\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Action\"        : \"s3:PutObject\",\n      \"Resource\"      : \"arn:aws:s3:::cna-624a2139-us-east-1/*\",\n      \"Condition\"     : {\"StringNotEquals\": {\"s3:x-amz-server-side-encryption\": \"aws:kms\"}}\n    },\n    {\n      \"Sid\"           : \"DenyUnEncryptedObjectUploads\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Action\"        : \"s3:PutObject\",\n      \"Resource\"      : \"arn:aws:s3:::cna-624a2139-us-east-1/*\",\n      \"Condition\"     : {\"StringNotEquals\": {\"s3:x-amz-server-side-encryption-aws-kms-key-id\": \"arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7\"}}\n    },\n    {\n      \"Sid\"           : \"Securetransport\",\n      \"Action\"        : \"s3:*\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Resource\"      : [\"arn:aws:s3:::cna-624a2139-us-east-1\",  \"arn:aws:s3:::cna-624a2139-us-east-1/*\" ],\n      \"Condition\"     : {\"Bool\": {\"aws:SecureTransport\": false}}\n    }\n  ]\n}"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "module.s3_bucket.provider.aws.primary"
+                },
+                "data.template_file.s3_bucket_policy": {
+                    "type": "template_file",
+                    "depends_on": [
+                        "aws_s3_bucket.s3_bucket.*",
+                        "aws_s3_bucket.s3_bucket_replicated.*"
+                    ],
+                    "primary": {
+                        "id": "4a67888e66913187481503fe379935ccb9cb917eca3b7aa0b92baaf1cefa9f58",
+                        "attributes": {
+                            "id": "4a67888e66913187481503fe379935ccb9cb917eca3b7aa0b92baaf1cefa9f58",
+                            "rendered": "{\n  \"Version\"     :   \"2012-10-17\",\n  \"Id\"          :   \"Base-DTCC-Bucket-Policy\",\n  \"Statement\"   : [\n    {\n      \"Sid\"           : \"DenyIncorrectEncryptionHeader\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Action\"        : \"s3:PutObject\",\n      \"Resource\"      : \"arn:aws:s3:::cna-624a2139-us-east-1/*\",\n      \"Condition\"     : {\"StringNotEquals\": {\"s3:x-amz-server-side-encryption\": \"aws:kms\"}}\n    },\n    {\n      \"Sid\"           : \"DenyUnEncryptedObjectUploads\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Action\"        : \"s3:PutObject\",\n      \"Resource\"      : \"arn:aws:s3:::cna-624a2139-us-east-1/*\",\n      \"Condition\"     : {\"StringNotEquals\": {\"s3:x-amz-server-side-encryption-aws-kms-key-id\": \"arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7\"}}\n    },\n    {\n      \"Sid\"           : \"Securetransport\",\n      \"Action\"        : \"s3:*\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Resource\"      : [\"arn:aws:s3:::cna-624a2139-us-east-1\",  \"arn:aws:s3:::cna-624a2139-us-east-1/*\" ],\n      \"Condition\"     : {\"Bool\": {\"aws:SecureTransport\": false}}\n    }\n  ]\n}",
+                            "template": "{\n  \"Version\"     :   \"2012-10-17\",\n  \"Id\"          :   \"Base-DTCC-Bucket-Policy\",\n  \"Statement\"   : [\n    {\n      \"Sid\"           : \"DenyIncorrectEncryptionHeader\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Action\"        : \"s3:PutObject\",\n      \"Resource\"      : \"${s3_bucket_arn}/*\",\n      \"Condition\"     : {\"StringNotEquals\": {\"s3:x-amz-server-side-encryption\": \"aws:kms\"}}\n    },\n    {\n      \"Sid\"           : \"DenyUnEncryptedObjectUploads\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Action\"        : \"s3:PutObject\",\n      \"Resource\"      : \"${s3_bucket_arn}/*\",\n      \"Condition\"     : {\"StringNotEquals\": {\"s3:x-amz-server-side-encryption-aws-kms-key-id\": \"${kms_key_arn}\"}}\n    },\n    {\n      \"Sid\"           : \"Securetransport\",\n      \"Action\"        : \"s3:*\",\n      \"Effect\"        : \"Deny\",\n      \"Principal\"     : \"*\",\n      \"Resource\"      : [\"${s3_bucket_arn}\",  \"${s3_bucket_arn}/*\" ],\n      \"Condition\"     : {\"Bool\": {\"aws:SecureTransport\": false}}\n    }\n  ]\n}",
+                            "vars.%": "2",
+                            "vars.kms_key_arn": "arn:aws:kms:us-east-1:443299236587:key/240c8d4f-0928-474a-9643-caee49d232b7",
+                            "vars.s3_bucket_arn": "arn:aws:s3:::cna-624a2139-us-east-1"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.template"
+                },
+                "random_id.s3_random_id": {
+                    "type": "random_id",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "7a75Ha5Wdaq-9mtE",
+                        "attributes": {
+                            "b64": "7a75Ha5Wdaq-9mtE",
+                            "b64_std": "7a75Ha5Wdaq+9mtE",
+                            "b64_url": "7a75Ha5Wdaq-9mtE",
+                            "byte_length": "12",
+                            "dec": "73559476837043897030212479812",
+                            "hex": "edaef91dae5675aabef66b44",
+                            "id": "7a75Ha5Wdaq-9mtE"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.random"
+                }
+            },
+            "depends_on": []
+        },
+        {
+            "path": [
+                "root",
+                "self_signed_cert"
+            ],
+            "outputs": {
+                "acm_certificate_arn": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "arn:aws:acm:us-east-1:443299236587:certificate/f010d83c-fb6e-4e52-acb4-0cbcb36ec7b3"
+                },
+                "certificate_body": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "-----BEGIN CERTIFICATE-----\nMIID9jCCAt6gAwIBAgIQXROo4ZxgiP69V8q3wWaybDANBgkqhkiG9w0BAQsFADB3\nMQwwCgYDVQQGEwNVU0ExDjAMBgNVBBETBTMzNjQ3MR0wGwYDVQQKExRNZWRlYSdz\nIFBoYW50b21zIExMQzEMMAoGA1UECxMDQkFEMSowKAYDVQQDEyE2MjRhMjEzOS5j\nbGIudGVzdC5hcHBkZXYuZHRjYy5vcmcwHhcNMTkwNjA3MTQyMjU1WhcNMTkwNjEy\nMTQyMjU1WjB3MQwwCgYDVQQGEwNVU0ExDjAMBgNVBBETBTMzNjQ3MR0wGwYDVQQK\nExRNZWRlYSdzIFBoYW50b21zIExMQzEMMAoGA1UECxMDQkFEMSowKAYDVQQDEyE2\nMjRhMjEzOS5jbGIudGVzdC5hcHBkZXYuZHRjYy5vcmcwggEiMA0GCSqGSIb3DQEB\nAQUAA4IBDwAwggEKAoIBAQC618/rCkal0kjvBq4kxvf0TiQpQ0HsmhX2PeBoCM4l\nsSilMnkRtlM/tVuR1KF8gBMpIv/lo12Wh6AZ4yHgwS9Z/IVmrkqCxDFcPFrx8bZM\nqH22ihbGABTejcSy/9aS/qqgaaor5bq7dsCtkN1E8eQE7D3jqrzChNNDd3xfOXGv\n9+cjmlDhcV1SVVmsYMQANJZTZdEnWhWYibWcmtGrOGFlnhlJ6bTqonQ2xnVkwFes\n03aflM9xRsCjJPO+XnxUOZb59sw+LQKJ5AnXWxfvf1EOWKjntdpvSQwxSOzx8Ztm\nP9y96seZ0eKddiIfi1mmc2HdKrzM/R95cBTVpJ7DunP9AgMBAAGjfjB8MA4GA1Ud\nDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMEcG\nA1UdEQRAMD6CPGludGVybmFsLWNuYS02MjRhMjEzOS0yMDY4MjQ0MDQ3LnVzLWVh\nc3QtMS5lbGIuYW1hem9uYXdzLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAO+MuF6ue\nNt+mAzy92NgWz5ORtmBaIq6lGbOJrX1JOBtLtOd7OeNVQ7niGNDpKeVxFVKThzQT\nQH5Qswlr1j2JpMSoPTXAVUUVdtAy/ibVfW0bwtgbV5XAZvOKpMLlJS82TdP1fSVS\noj9YFe/TFThIynEMIJZRL67e64GG6SiLpR07Md9N+e+JPOpYoYzHY7Al8TCRKEoh\n217AI72djIId+H0rDOh15I3hz4gMMbzKFe5eWYDYOgwa4Tlq4adf0zY34Rr8lRpF\n8xX0UIJJQQPpDhFrh+KUBpUXyf7M+s22vzHzzhoj4o4Kg4Gr6nItG0w7VSwtxCuf\nk1qDIERwPffphw==\n-----END CERTIFICATE-----\n"
+                },
+                "private_key": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAutfP6wpGpdJI7wauJMb39E4kKUNB7JoV9j3gaAjOJbEopTJ5\nEbZTP7VbkdShfIATKSL/5aNdloegGeMh4MEvWfyFZq5KgsQxXDxa8fG2TKh9tooW\nxgAU3o3Esv/Wkv6qoGmqK+W6u3bArZDdRPHkBOw946q8woTTQ3d8Xzlxr/fnI5pQ\n4XFdUlVZrGDEADSWU2XRJ1oVmIm1nJrRqzhhZZ4ZSem06qJ0NsZ1ZMBXrNN2n5TP\ncUbAoyTzvl58VDmW+fbMPi0CieQJ11sX739RDlio57Xab0kMMUjs8fGbZj/cverH\nmdHinXYiH4tZpnNh3Sq8zP0feXAU1aSew7pz/QIDAQABAoIBAFHe8QdvyEcu3rCG\nP9ZzrQDLIMNH6mIvnoH42RUdDp+rgkDo3e4p806OPGKpRl2UjVDQOks4i3DDWx8c\nzKJ8ZDBNG3ND2fh02aAt/jfYD2aFyhgraBE4xexDOLaqri5ZExEZW+zCTFGKlqE3\nQg3M5HpXvkK9dNrTcvM0LzZWqH9PJLjQPU0pGBPwLm9Q95BNU10pxbnDvvTF9Lmd\nqRerNPWU3LlU+H52PBHQegOmp2J31DVrGUd1mSur6jntadu3Ge2RKpVKs9YVFC9t\ntRZnjO3glat37G4Th91lg9Ptak9CIQYmu/b720u3pYyKHjzYzxtkcxeovGszllCh\n/lDBvgECgYEA2b7fjK5DTadii8NYbvSAR62Poy/zqTWZovzNiToSl5Oj6xgwo8yW\nBg5zws2VS8DvIPovgw0E9wIcrhItPTEpzgdVF6x0pqXYacTLNd8VlCJn8mM7Rf8I\n3CkeKt6RhiSN2nE3Q7ElN3YVwnS/VQ60Nvy02t70aGlvslzN2gU0a30CgYEA26sX\nugQSXtHt+mzd34W8rAzn4okNHFZ8Ilp1+ebO+Prw/J5XRD0Xb2DdBIzNrxDr02AH\nUtc/S3n1fXPa/bYyeYom5ZGOoO+nJ9QAHzeWQSFFigrMZhUpcnI4bBKiHHive8/P\nY99VZrhqzSeGGA24zYoSv4J45T2XMmlcSFx/koECgYBlNnr1Cn+QVfDRpHCzyoTi\nTIPKx9xL1/VdNINZeRvxRxhXi/v39334vLkEYMk32CuPOZviH6giJOIt65cJrZOQ\nCAp+oZPrboWEzIvks5h1LfUBTyzbIWv94kL6jFA6eT1Sv3N/zJTPDd2ZcOkK4XXV\nZWuvnRkge3oG/2pUID04hQKBgQCb64d926IGd9AJbvjVzaGsJcT6QPlzYdfesoMH\nDNNgWw5u4R1kLFDUF9cJgcAFQWeCs6i/HlWpBzo+/9szNv4A0xTk4jpw9WqalJo5\njkUymaE4aI3I78BpobV20IsM1oUIxuqYI1AFB2WXlTRTInpIOncwRDX30Y3elHaS\nTkWnAQKBgDZ3Zq1gTSQvcSjHRoRsoPNkDW8b1PvxW1K9v72zzSkwlF+SaVotPYCP\nTSp+1Boc5KNIRZ3LXMLiy+25AAWUXYtIAiMQqb/brvKOXzHN4Ac6MwvcpseNxrfu\nfbdcEmhzMN62QVzxPIxfmcwdVuvX0wJFH+gmFV9dRNUzrFLX4AvF\n-----END RSA PRIVATE KEY-----\n"
+                }
+            },
+            "resources": {
+                "aws_acm_certificate.cert": {
+                    "type": "aws_acm_certificate",
+                    "depends_on": [
+                        "tls_private_key.example",
+                        "tls_self_signed_cert.example"
+                    ],
+                    "primary": {
+                        "id": "arn:aws:acm:us-east-1:443299236587:certificate/f010d83c-fb6e-4e52-acb4-0cbcb36ec7b3",
+                        "attributes": {
+                            "arn": "arn:aws:acm:us-east-1:443299236587:certificate/f010d83c-fb6e-4e52-acb4-0cbcb36ec7b3",
+                            "certificate_body": "dc747ed2bb462948f278797a44a3ba3bbdd033ea",
+                            "domain_name": "624a2139.clb.test.appdev.dtcc.org",
+                            "domain_validation_options.#": "0",
+                            "id": "arn:aws:acm:us-east-1:443299236587:certificate/f010d83c-fb6e-4e52-acb4-0cbcb36ec7b3",
+                            "private_key": "dc3172f9b638622691f81474629b76a0fc497497",
+                            "subject_alternative_names.#": "1",
+                            "subject_alternative_names.0": "internal-cna-624a2139-2068244047.us-east-1.elb.amazonaws.com",
+                            "tags.%": "8",
+                            "tags.application_id": "cna",
+                            "tags.best_by": "1 month after creation date",
+                            "tags.created_by": "no-reply@dtcc.com",
+                            "tags.data_class": "green",
+                            "tags.description": "Web Cluster with ALB and Zero Down Time Deployements",
+                            "tags.environment": "dev",
+                            "tags.stack_name": "test stack of Medeas Baneful Phantoms",
+                            "tags.termination_date": "n/a",
+                            "validation_emails.#": "0",
+                            "validation_method": "NONE"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "tls_private_key.example": {
+                    "type": "tls_private_key",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "7afdc9b4fa4a0ac40eae4d5ef32936541b8f41fc",
+                        "attributes": {
+                            "algorithm": "RSA",
+                            "ecdsa_curve": "P224",
+                            "id": "7afdc9b4fa4a0ac40eae4d5ef32936541b8f41fc",
+                            "private_key_pem": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAutfP6wpGpdJI7wauJMb39E4kKUNB7JoV9j3gaAjOJbEopTJ5\nEbZTP7VbkdShfIATKSL/5aNdloegGeMh4MEvWfyFZq5KgsQxXDxa8fG2TKh9tooW\nxgAU3o3Esv/Wkv6qoGmqK+W6u3bArZDdRPHkBOw946q8woTTQ3d8Xzlxr/fnI5pQ\n4XFdUlVZrGDEADSWU2XRJ1oVmIm1nJrRqzhhZZ4ZSem06qJ0NsZ1ZMBXrNN2n5TP\ncUbAoyTzvl58VDmW+fbMPi0CieQJ11sX739RDlio57Xab0kMMUjs8fGbZj/cverH\nmdHinXYiH4tZpnNh3Sq8zP0feXAU1aSew7pz/QIDAQABAoIBAFHe8QdvyEcu3rCG\nP9ZzrQDLIMNH6mIvnoH42RUdDp+rgkDo3e4p806OPGKpRl2UjVDQOks4i3DDWx8c\nzKJ8ZDBNG3ND2fh02aAt/jfYD2aFyhgraBE4xexDOLaqri5ZExEZW+zCTFGKlqE3\nQg3M5HpXvkK9dNrTcvM0LzZWqH9PJLjQPU0pGBPwLm9Q95BNU10pxbnDvvTF9Lmd\nqRerNPWU3LlU+H52PBHQegOmp2J31DVrGUd1mSur6jntadu3Ge2RKpVKs9YVFC9t\ntRZnjO3glat37G4Th91lg9Ptak9CIQYmu/b720u3pYyKHjzYzxtkcxeovGszllCh\n/lDBvgECgYEA2b7fjK5DTadii8NYbvSAR62Poy/zqTWZovzNiToSl5Oj6xgwo8yW\nBg5zws2VS8DvIPovgw0E9wIcrhItPTEpzgdVF6x0pqXYacTLNd8VlCJn8mM7Rf8I\n3CkeKt6RhiSN2nE3Q7ElN3YVwnS/VQ60Nvy02t70aGlvslzN2gU0a30CgYEA26sX\nugQSXtHt+mzd34W8rAzn4okNHFZ8Ilp1+ebO+Prw/J5XRD0Xb2DdBIzNrxDr02AH\nUtc/S3n1fXPa/bYyeYom5ZGOoO+nJ9QAHzeWQSFFigrMZhUpcnI4bBKiHHive8/P\nY99VZrhqzSeGGA24zYoSv4J45T2XMmlcSFx/koECgYBlNnr1Cn+QVfDRpHCzyoTi\nTIPKx9xL1/VdNINZeRvxRxhXi/v39334vLkEYMk32CuPOZviH6giJOIt65cJrZOQ\nCAp+oZPrboWEzIvks5h1LfUBTyzbIWv94kL6jFA6eT1Sv3N/zJTPDd2ZcOkK4XXV\nZWuvnRkge3oG/2pUID04hQKBgQCb64d926IGd9AJbvjVzaGsJcT6QPlzYdfesoMH\nDNNgWw5u4R1kLFDUF9cJgcAFQWeCs6i/HlWpBzo+/9szNv4A0xTk4jpw9WqalJo5\njkUymaE4aI3I78BpobV20IsM1oUIxuqYI1AFB2WXlTRTInpIOncwRDX30Y3elHaS\nTkWnAQKBgDZ3Zq1gTSQvcSjHRoRsoPNkDW8b1PvxW1K9v72zzSkwlF+SaVotPYCP\nTSp+1Boc5KNIRZ3LXMLiy+25AAWUXYtIAiMQqb/brvKOXzHN4Ac6MwvcpseNxrfu\nfbdcEmhzMN62QVzxPIxfmcwdVuvX0wJFH+gmFV9dRNUzrFLX4AvF\n-----END RSA PRIVATE KEY-----\n",
+                            "public_key_fingerprint_md5": "ad:9e:99:af:75:6e:0b:4c:52:b8:95:aa:de:74:c6:11",
+                            "public_key_openssh": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC618/rCkal0kjvBq4kxvf0TiQpQ0HsmhX2PeBoCM4lsSilMnkRtlM/tVuR1KF8gBMpIv/lo12Wh6AZ4yHgwS9Z/IVmrkqCxDFcPFrx8bZMqH22ihbGABTejcSy/9aS/qqgaaor5bq7dsCtkN1E8eQE7D3jqrzChNNDd3xfOXGv9+cjmlDhcV1SVVmsYMQANJZTZdEnWhWYibWcmtGrOGFlnhlJ6bTqonQ2xnVkwFes03aflM9xRsCjJPO+XnxUOZb59sw+LQKJ5AnXWxfvf1EOWKjntdpvSQwxSOzx8ZtmP9y96seZ0eKddiIfi1mmc2HdKrzM/R95cBTVpJ7DunP9\n",
+                            "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAutfP6wpGpdJI7wauJMb3\n9E4kKUNB7JoV9j3gaAjOJbEopTJ5EbZTP7VbkdShfIATKSL/5aNdloegGeMh4MEv\nWfyFZq5KgsQxXDxa8fG2TKh9tooWxgAU3o3Esv/Wkv6qoGmqK+W6u3bArZDdRPHk\nBOw946q8woTTQ3d8Xzlxr/fnI5pQ4XFdUlVZrGDEADSWU2XRJ1oVmIm1nJrRqzhh\nZZ4ZSem06qJ0NsZ1ZMBXrNN2n5TPcUbAoyTzvl58VDmW+fbMPi0CieQJ11sX739R\nDlio57Xab0kMMUjs8fGbZj/cverHmdHinXYiH4tZpnNh3Sq8zP0feXAU1aSew7pz\n/QIDAQAB\n-----END PUBLIC KEY-----\n",
+                            "rsa_bits": "2048"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.tls"
+                },
+                "tls_self_signed_cert.example": {
+                    "type": "tls_self_signed_cert",
+                    "depends_on": [
+                        "tls_private_key.example"
+                    ],
+                    "primary": {
+                        "id": "123720282567855682446874414324459680364",
+                        "attributes": {
+                            "allowed_uses.#": "3",
+                            "allowed_uses.0": "key_encipherment",
+                            "allowed_uses.1": "digital_signature",
+                            "allowed_uses.2": "server_auth",
+                            "cert_pem": "-----BEGIN CERTIFICATE-----\nMIID9jCCAt6gAwIBAgIQXROo4ZxgiP69V8q3wWaybDANBgkqhkiG9w0BAQsFADB3\nMQwwCgYDVQQGEwNVU0ExDjAMBgNVBBETBTMzNjQ3MR0wGwYDVQQKExRNZWRlYSdz\nIFBoYW50b21zIExMQzEMMAoGA1UECxMDQkFEMSowKAYDVQQDEyE2MjRhMjEzOS5j\nbGIudGVzdC5hcHBkZXYuZHRjYy5vcmcwHhcNMTkwNjA3MTQyMjU1WhcNMTkwNjEy\nMTQyMjU1WjB3MQwwCgYDVQQGEwNVU0ExDjAMBgNVBBETBTMzNjQ3MR0wGwYDVQQK\nExRNZWRlYSdzIFBoYW50b21zIExMQzEMMAoGA1UECxMDQkFEMSowKAYDVQQDEyE2\nMjRhMjEzOS5jbGIudGVzdC5hcHBkZXYuZHRjYy5vcmcwggEiMA0GCSqGSIb3DQEB\nAQUAA4IBDwAwggEKAoIBAQC618/rCkal0kjvBq4kxvf0TiQpQ0HsmhX2PeBoCM4l\nsSilMnkRtlM/tVuR1KF8gBMpIv/lo12Wh6AZ4yHgwS9Z/IVmrkqCxDFcPFrx8bZM\nqH22ihbGABTejcSy/9aS/qqgaaor5bq7dsCtkN1E8eQE7D3jqrzChNNDd3xfOXGv\n9+cjmlDhcV1SVVmsYMQANJZTZdEnWhWYibWcmtGrOGFlnhlJ6bTqonQ2xnVkwFes\n03aflM9xRsCjJPO+XnxUOZb59sw+LQKJ5AnXWxfvf1EOWKjntdpvSQwxSOzx8Ztm\nP9y96seZ0eKddiIfi1mmc2HdKrzM/R95cBTVpJ7DunP9AgMBAAGjfjB8MA4GA1Ud\nDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMEcG\nA1UdEQRAMD6CPGludGVybmFsLWNuYS02MjRhMjEzOS0yMDY4MjQ0MDQ3LnVzLWVh\nc3QtMS5lbGIuYW1hem9uYXdzLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAO+MuF6ue\nNt+mAzy92NgWz5ORtmBaIq6lGbOJrX1JOBtLtOd7OeNVQ7niGNDpKeVxFVKThzQT\nQH5Qswlr1j2JpMSoPTXAVUUVdtAy/ibVfW0bwtgbV5XAZvOKpMLlJS82TdP1fSVS\noj9YFe/TFThIynEMIJZRL67e64GG6SiLpR07Md9N+e+JPOpYoYzHY7Al8TCRKEoh\n217AI72djIId+H0rDOh15I3hz4gMMbzKFe5eWYDYOgwa4Tlq4adf0zY34Rr8lRpF\n8xX0UIJJQQPpDhFrh+KUBpUXyf7M+s22vzHzzhoj4o4Kg4Gr6nItG0w7VSwtxCuf\nk1qDIERwPffphw==\n-----END CERTIFICATE-----\n",
+                            "dns_names.#": "1",
+                            "dns_names.0": "internal-cna-624a2139-2068244047.us-east-1.elb.amazonaws.com",
+                            "early_renewal_hours": "3",
+                            "id": "123720282567855682446874414324459680364",
+                            "key_algorithm": "RSA",
+                            "private_key_pem": "dc3172f9b638622691f81474629b76a0fc497497",
+                            "subject.#": "1",
+                            "subject.0.common_name": "624a2139.clb.test.appdev.dtcc.org",
+                            "subject.0.country": "USA",
+                            "subject.0.locality": "",
+                            "subject.0.organization": "Medea's Phantoms LLC",
+                            "subject.0.organizational_unit": "BAD",
+                            "subject.0.postal_code": "33647",
+                            "subject.0.province": "",
+                            "subject.0.serial_number": "",
+                            "subject.0.street_address.#": "0",
+                            "validity_end_time": "2019-06-12T10:22:55.4829743-04:00",
+                            "validity_period_hours": "120",
+                            "validity_start_time": "2019-06-07T10:22:55.4829743-04:00"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.tls"
+                }
+            },
+            "depends_on": []
+        },
+        {
+            "path": [
+                "root",
+                "asg",
+                "existing-asg-capacity"
+            ],
+            "outputs": {
+                "asg_desired_capacity": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "null"
+                },
+                "asg_exists": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "false"
+                },
+                "asg_instance_count": {
+                    "sensitive": false,
+                    "type": "string",
+                    "value": "null"
+                }
+            },
+            "resources": {
+                "data.aws_region.current": {
+                    "type": "aws_region",
+                    "depends_on": [],
+                    "primary": {
+                        "id": "us-east-1",
+                        "attributes": {
+                            "description": "US East (N. Virginia)",
+                            "endpoint": "ec2.us-east-1.amazonaws.com",
+                            "id": "us-east-1",
+                            "name": "us-east-1"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.aws"
+                },
+                "data.external.asg_capacity": {
+                    "type": "external",
+                    "depends_on": [
+                        "data.aws_region.current"
+                    ],
+                    "primary": {
+                        "id": "-",
+                        "attributes": {
+                            "id": "-",
+                            "program.#": "10",
+                            "program.0": "aws",
+                            "program.1": "--no-verify-ssl",
+                            "program.2": "--region",
+                            "program.3": "us-east-1",
+                            "program.4": "autoscaling",
+                            "program.5": "describe-auto-scaling-groups",
+                            "program.6": "--auto-scaling-group-names",
+                            "program.7": "cna-lt-0c2953e5422f00d29-0",
+                            "program.8": "--query",
+                            "program.9": "{exists:to_string(AutoScalingGroups[?AutoScalingGroupName==`cna-lt-0c2953e5422f00d29-0`]|[0]!= null), instance_count: to_string((AutoScalingGroups[?AutoScalingGroupName==`cna-lt-0c2953e5422f00d29-0`]|[0]) \u0026\u0026 length(AutoScalingGroups[?AutoScalingGroupName==`cna-lt-0c2953e5422f00d29-0`]|[0].Instances)), desired_capacity:to_string(AutoScalingGroups[?AutoScalingGroupName==`cna-lt-0c2953e5422f00d29-0`]|[0].DesiredCapacity) }",
+                            "result.%": "3",
+                            "result.desired_capacity": "null",
+                            "result.exists": "false",
+                            "result.instance_count": "null"
+                        },
+                        "meta": {},
+                        "tainted": false
+                    },
+                    "deposed": [],
+                    "provider": "provider.external"
+                }
+            },
+            "depends_on": []
+        }
+    ]
+}
