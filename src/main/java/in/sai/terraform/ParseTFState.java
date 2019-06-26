@@ -77,7 +77,6 @@ public class ParseTFState {
 				Set resourcesKeys = resources.keySet();
 				for (Object resourcesKey : resourcesKeys) {
 					JSONObject resource = (JSONObject) resources.get(resourcesKey);
-					String resourceType = (String) resource.get("type");
 					JSONObject primary = (JSONObject) resource.get("primary");
 					String type = (String) resource.get("type");
 					String id = (String) primary.get("id");
@@ -95,8 +94,5 @@ public class ParseTFState {
 
 	
 	}
-	
-	public static void main(String[] args) {
-		readTerraformStateFile("terraform.json","output.json");
-	}
+
 }
