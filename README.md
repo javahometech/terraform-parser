@@ -7,19 +7,21 @@ The folowing code creates jar file
   mvn package
 ```
 
-## 2. Using jar file 
+## 2. Using jar file in Jenkinsfile 
 
 Add this jar to classpath and then use following code to invoke method
 
-```
+```code()
 
 import in.sai.terraform.ParseTFState;
 
-public class Main {
-public static void main(String[] args) {
-	
-	ParseTFState.readTerraformStateFile("terraform.json","output.json");
-}
-}
+node{
+  stage('Parse Terraform State'){
+        def sourceFilePath = "<your location of terraform state file>"
+	def destFilePath = "<your location where you want output path>"
+  	ParseTFState.readTerraformStateFile(sourceFilePath,destFilePath);
+  }
+
+}	
 
 ```
